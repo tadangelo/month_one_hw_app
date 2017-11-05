@@ -1,12 +1,33 @@
-<div class="row">
-  <div class="col-sm-2"><%= render @blogs[1] %></div>
-  <div class="col-sm-4"><%= render @blogs[0] %></div>
-  <div class="col-sm-2"><%= render @blogs[1] %></div>
-  <div class="col-sm-4"><%= render @blogs[0] %></div>
-</div>
-<div class="row">
-  <div class="col-sm"><%= render @blogs[2] %></div>
-  <div class="col-sm"><%= render @blogs[3] %></div>
-  <div class="col-sm"><%= render @blogs[4] %></div>
-  <div class="col-sm"><%= render @blogs[4] %></div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-">
+      <h1>Latest Posts</h1>
+
+      <hr>
+
+      <div class="row">
+        <div class="group1 col-sm-6 col-md-6">
+          <%= render @blogs[0] %>  
+        </div>
+        <div class="group2 col-sm-6 col-md-6">
+          <%= render @blogs[1] %>
+        </div>
+        <div class="group2 col-sm-6 col-md-6">
+          <%= render @blogs[2] %>
+        </div>
+        <div class="group2 col-sm-6 col-md-6">
+          <%= render @blogs[3] %>
+        </div>
+        <div class="group2 col-sm-6 col-md-6">
+          <%= render @blogs[4] %>
+        </div>
+        <div class="group2 col-sm-6 col-md-6">
+          <%= render @blogs[5] %>
+        </div>
+      </div>
+ 
+      <hr>
+      
+    </div>
+  </div>
 </div>

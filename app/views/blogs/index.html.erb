@@ -1,6 +1,12 @@
-<div class="col-sm-12 blog-main">
-  
-  <%= render @blogs %>
-
-
+<div class="row">
+  <div class="col-sm-2"><%= render @blogs[1] %></div>
+  <div class="col-sm-4"><%= render @blogs[0] %></div>
+  <div class="col-sm-2"><%= render @blogs[1] %></div>
+  <div class="col-sm-4"><%= render @blogs[0] %></div>
+</div>
+<div class="row">
+  <div class="col-sm"><%= render @blogs[2] %></div>
+  <div class="col-sm"><%= render @blogs[3] %></div>
+  <div class="col-sm"><%= render @blogs[4] %></div>
+  <div class="col-sm"><%= render @blogs[4] %></div>
 </div>

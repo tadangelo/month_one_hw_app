@@ -1,33 +1,39 @@
 <div class="container">
   <div class="row">
     <div class="col-md-">
-      <h1>Latest Posts</h1>
+      <h4>Latest Posts</h4>
 
       <hr>
+        
+        <div class="group1 col-sm-12">
+          <% @blogs.each do |blog| %>
+            <div class="row">
+              <div class=" col-md-4">
+                <%= blog.title %>
+              </div>
 
-      <div class="row">
-        <div class="group1 col-sm-6 col-md-6">
-          <%= render @blogs[0] %>  
-        </div>
-        <div class="group2 col-sm-6 col-md-6">
-          <%= render @blogs[1] %>
-        </div>
-        <div class="group2 col-sm-6 col-md-6">
-          <%= render @blogs[2] %>
-        </div>
-        <div class="group2 col-sm-6 col-md-6">
-          <%= render @blogs[3] %>
-        </div>
-        <div class="group2 col-sm-6 col-md-6">
-          <%= render @blogs[4] %>
-        </div>
-        <div class="group2 col-sm-6 col-md-6">
-          <%= render @blogs[5] %>
-        </div>
-      </div>
- 
-      <hr>
-      
+              <div class="col-md-4">
+                <p class="blog-post-meta">Published <%=distance_of_time_in_words(blog.created_at, Time.now) %> ago</p>
+              </div>
+
+              <div class="col-md-4">
+                <%= blog.author %>
+              </div>
+            </div>
+
+            <div class="row">
+              <%= blog.body %>
+            </div>
+
+            <% if logged_in?(:site_admin) %>
+              <p class="blog-post-meta">
+              <%= link_to 'Create a Post', new_blog_path(blog) %> |
+              <%= link_to 'Edit', edit_blog_path(blog) %> |
+              <%= link_to 'Delete Post', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <p>
+            <% end %>
+          <% end %>
+        </div>  
     </div>
   </div>
 </div>

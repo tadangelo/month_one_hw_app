@@ -5,11 +5,11 @@
 
       <hr>
         
-        <div class="group1 col-sm-12">
+        <div class="group1 col-sm-12 justify-content-end">
           <% @blogs.each do |blog| %>
             <div class="row">
               <div class=" col-md-4">
-                <%= blog.title %>
+                <%= link_to blog.title, blog %>
               </div>
 
               <div class="col-md-4">
